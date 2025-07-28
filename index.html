@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>discord.gg/000000000</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://cdn.discordapp.com/attachments/1355302073088082193/1399488407302045797/media1.png?ex=68892ea5&is=6887dd25&hm=e56bcaa246f285ec292a803eef25ac59119e73c2a9b085c1e282e82b1793069a&') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Courier New', Courier, monospace;
+            color: #0000ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+        .image-container img {
+            width: 750px; 
+            height: auto;
+            border: 2px solid #0000ff; 
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 255, 0.7); 
+        }
+        .info {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #0000ff; 
+            text-shadow: 0px 0px 8px #ff0000, 0px 0px 15px #0000ff, 0px 0px 25px #0000ff; 
+            letter-spacing: 4.5px; 
+            white-space: pre-wrap;
+        }
+        .text {
+            margin-top: 20px;
+            font-size: 3em; 
+            color: #0000ff; 
+            text-shadow: 0px 0px 8px #ff0000, 0px 0px 15px #ff0000, 0px 0px 25px #0000ff; 
+            letter-spacing: 4.5px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="https://cdn.discordapp.com/attachments/1399476002056437760/1399493460481937578/image.png?ex=6889335a&is=6887e1da&hm=19d54b6cc61d853de8673b22af7d6d2297185a27989397fba1bfe2951d47aa74&">
+    </div>
+    <audio autoplay loop>
+        <source src="https://cdn.discordapp.com/attachments/1399476002056437760/1399491896845402162/Free_Download_Borrow_and_Streaming___Internet_Archive_0.mp3?ex=688931e5&is=6887e065&hm=248a1856cd3de5eb4422429f0510242ed4217d1eb7fdb1cde50c6a920b3fcef1&">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="info" id="ip-info">
+        <strong>IP: <span id="ip"></span></strong><br>
+        <span><strong>City:</strong> <span id="city"></span></span><br>
+        <span><strong>Region:</strong> <span id="region"></span></span><br>
+        <span><strong>Country:</strong> <span id="country"></span></span><br>
+        <span><strong>Location:</strong> <span id="loc"></span></span><br>
+        <span><strong>Organization:</strong> <span id="org"></span></span><br>
+        <span><strong>Timezone:</strong> <span id="timezone"></span></span>
+    </div>
+    <div class="text">discord.gg/erafu </div>
+
+    <script>
+         fetch('https://ipinfo.io/json')
+        .then(response => response.json())
+        .then(data => {
+            delete data.readme;
+            const infoDiv = document.getElementById('ip-info');
+            infoDiv.textContent = JSON.stringify(data, null, 2);
+        });
+    </script>
+</body>
+</html>
